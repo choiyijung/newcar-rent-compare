@@ -40,10 +40,28 @@ form?.addEventListener("submit", async (e) => {
 
   const isCarPage = window.location.pathname.includes("/cars/");
 
-  const region =
-    isCarPage
-      ? ""
-      : (document.querySelector("h1")?.textContent.trim() || "");
+  const regionMap = {
+    seoul: "서울",
+    busan: "부산",
+    daegu: "대구",
+    incheon: "인천",
+    gwangju: "광주",
+    daejeon: "대전",
+    ulsan: "울산",
+    sejong: "세종",
+    gyeonggi: "경기",
+    gangwon: "강원",
+    chungbuk: "충북",
+    chungnam: "충남",
+    jeonbuk: "전북",
+    jeonnam: "전남",
+    gyeongbuk: "경북",
+    gyeongnam: "경남",
+    jeju: "제주"
+  };
+
+  const firstPathSegment = window.location.pathname.split("/").filter(Boolean)[0] || "";
+  const region = isCarPage ? "" : (regionMap[firstPathSegment] || "");
 
   const payload = {
     name: data.get("name"),
@@ -95,6 +113,7 @@ form?.addEventListener("submit", async (e) => {
 document.getElementById("callPlaceholder")?.addEventListener("click", () => {
   window.location.href = "tel:010-2144-2950";
 });
+
 
 
 
