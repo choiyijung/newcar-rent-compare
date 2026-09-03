@@ -1,4 +1,4 @@
-document.querySelectorAll(".segmented").forEach(group => {
+﻿document.querySelectorAll(".segmented").forEach(group => {
   const hidden = group.parentElement.querySelector('input[type="hidden"]');
 
   group.querySelectorAll("button").forEach(button => {
@@ -21,12 +21,12 @@ form?.addEventListener("submit", async (e) => {
   const data = new FormData(form);
 
   if (!data.get("car") || !data.get("name") || !data.get("phone")) {
-    alert("희망 차량, 고객명, 휴대폰번호를 입력해주세요.");
+    alert("?щ쭩 李⑤웾, 怨좉컼紐? ?대??곕쾲?몃? ?낅젰?댁＜?몄슂.");
     return;
   }
 
   if (!data.get("privacy_agree")) {
-    alert("개인정보 수집 및 이용 동의가 필요합니다.");
+    alert("媛쒖씤?뺣낫 ?섏쭛 諛??댁슜 ?숈쓽媛 ?꾩슂?⑸땲??");
     return;
   }
 
@@ -35,7 +35,7 @@ form?.addEventListener("submit", async (e) => {
 
   if (submitButton) {
     submitButton.disabled = true;
-    submitButton.textContent = "접수 중...";
+    submitButton.textContent = "?묒닔 以?..";
   }
 
   const isCarPage = window.location.pathname.includes("/cars/");
@@ -95,3 +95,6 @@ form?.addEventListener("submit", async (e) => {
 document.getElementById("callPlaceholder")?.addEventListener("click", () => {
   window.location.href = "tel:010-2144-2950";
 });
+
+
+
